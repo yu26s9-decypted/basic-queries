@@ -58,6 +58,17 @@ SELECT firstname, lastname, title, salary FROM employees
 WHERE salary <= 2500 AND salary >= 2000;
 -- 15. List all the information about all of Northwind's suppliers.
 SELECT * FROM suppliers;
+
 -- 16. Examine the Products table. How do you know what supplier supplies each
 -- product? Write a query to list all the items that "Tokyo Traders" supplies to
 -- Northwind
+ -- SELECT products.supplierid, suppliers.companyname 
+--  FROM products 
+--  JOIN suppliers
+--  WHERE products.supplierid = suppliers.supplierid
+
+SELECT products.productname, suppliers.supplierid, companyname 
+FROM suppliers 
+INNER JOIN products
+ON suppliers.supplierid = products.supplierid
+WHERE suppliers.companyname = 'Tokyo Traders';
