@@ -35,8 +35,13 @@ WHERE unitsinstock = 0 AND unitsonorder >= 1;
 -- Northwind sells?
 -- Cateogries - CategoryName
 
+
 -- 9. Write a query that lists all of the columns and all the rows of the categories table?
+-- What is the category id of seafood?
 SELECT * FROM categories;
+
+SELECT categoryname, categoryid FROM categories
+WHERE categoryid = 8;
 
 -- 10. Examine the Products table. How does it identify the type (category) of each item
 -- sold? Write a query to list all of the seafood items we carry.
