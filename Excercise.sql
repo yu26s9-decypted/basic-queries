@@ -51,8 +51,13 @@ SELECT firstname, lastname, title FROM Employees
 WHERE title LIKE "%manager%";
 
 -- 13. List the distinct job titles in employees.
--- 14. What employees have a salary that is between $200 0 and $2500?
+SELECT  DISTINCT title FROM employees;
+
+-- 14. What employees have a salary that is between $2000 and $2500?
+SELECT firstname, lastname, title, salary FROM employees
+WHERE salary <= 2500 AND salary >= 2000;
 -- 15. List all the information about all of Northwind's suppliers.
+SELECT * FROM suppliers;
 -- 16. Examine the Products table. How do you know what supplier supplies each
 -- product? Write a query to list all the items that "Tokyo Traders" supplies to
 -- Northwind
