@@ -40,8 +40,11 @@ SELECT * FROM categories;
 
 -- 10. Examine the Products table. How does it identify the type (category) of each item
 -- sold? Write a query to list all of the seafood items we carry.
-SELECT Categories.CategoryID, Products.ProductName FROM Categories
-INNER JOIN Products ON Categories.CategoryID = Products.CategoriesID;
+SELECT products.productname, products.categoryid, categoryname
+FROM categories
+INNER JOIN products
+ON categories.categoryid = products.categoryid
+WHERE products.categoryid = 8;
 
 -- 11. What are the first and last names of all of the Northwind employees?
 SELECT firstname, lastname FROM Employees;
