@@ -30,15 +30,26 @@ ORDER BY unitprice DESC;
 -- more units of them on backorder? Order them by product name.
 SELECT * FROM products
 WHERE unitsinstock = 0 AND unitsonorder >= 1;
+
 -- 8. What is the name of the table that holds the types (categories) of the items
 -- Northwind sells?
--- Product
+-- Cateogries - CategoryName
+
 -- 9. Write a query that lists all of the columns and all the rows of the categories table?
--- What is the category id of seafood?
+SELECT * FROM categories;
+
 -- 10. Examine the Products table. How does it identify the type (category) of each item
 -- sold? Write a query to list all of the seafood items we carry.
+SELECT Categories.CategoryID, Products.ProductName FROM Categories
+INNER JOIN Products ON Categories.CategoryID = Products.CategoriesID;
+
 -- 11. What are the first and last names of all of the Northwind employees?
+SELECT firstname, lastname FROM Employees;
+
 -- 12. What employees have "manager" in their titles?
+SELECT firstname, lastname, title FROM Employees
+WHERE title LIKE "%manager%";
+
 -- 13. List the distinct job titles in employees.
 -- 14. What employees have a salary that is between $200 0 and $2500?
 -- 15. List all the information about all of Northwind's suppliers.
